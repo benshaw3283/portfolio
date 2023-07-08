@@ -1,7 +1,7 @@
 import Image from "next/image";
 import sr from "../public/ShawReviews.png";
 import GmailTooltip from "../components/Tooltip";
-import Link from "next/link";
+
 
 
 export default function Home() {
