@@ -1,7 +1,7 @@
 import React from "react";
 import * as Tooltip from "@radix-ui/react-tooltip";
 
-import "../styles/tooltip.module.css";
+import styles from "../styles/tooltip.module.css";
 
 const GmailTooltip = () => {
   return (
@@ -40,12 +40,12 @@ const GmailTooltip = () => {
         </Tooltip.Trigger>
         <Tooltip.Portal>
           <Tooltip.Content
-            className="TooltipContent"
+            className={styles.TooltipContent}
             sideOffset={5}
             side="right"
           >
             benshaw.business@gmail.com
-            <Tooltip.Arrow className="TooltipArrow" />
+            <Tooltip.Arrow className={styles.TooltipArrow} />
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>
