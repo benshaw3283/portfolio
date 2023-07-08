@@ -10,7 +10,7 @@ export default function Home() {
       <title>Ben Shaw</title>
       <div className="min-h-screen bg-stone-950 ">
         
-        <div className="absolute pl-2 pt-2 lg:invisible" >
+        <div className="absolute pl-2 pt-2 lg:invisible z-10" >
           <Image alt='githubphone' src={githubPhone} onClick={() =>
                   window.open("https://github.com/benshaw3283", "_blank")
                 }/>
