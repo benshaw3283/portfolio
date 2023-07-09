@@ -18,9 +18,9 @@ export default function Home() {
         <div className="absolute pl-16 pt-2 lg:invisible visible">
           <GmailPopover/>
         </div>
-        <div className=" absolute top-2 lg:right-16 right-4 justify-end place-items-center flex">
+        <div className=" absolute top-1 lg:right-16 right-2 justify-end place-items-center flex">
         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" id="pin"><path fill="#f05542" d="M8 1C5.239 1 3 3.357 3 6.264S8 15 8 15s5-5.829 5-8.736C13 3.357 10.761 1 8 1zm0 2.925a1.667 1.755 0 0 1 1.667 1.754A1.667 1.755 0 0 1 8 7.434a1.667 1.755 0 0 1-1.667-1.755A1.667 1.755 0 0 1 8 3.925z"></path></svg>
-        <p className="pl-2">Melbourne, Australia</p>
+        <p className="pl-2 lg:text-base text-sm">Melbourne, Australia</p>
         </div>
         <div className="absolute lg:top-2 top-40 pl-4 place-self-start flex lg:flex-col">
           <br></br>
@@ -39,7 +39,7 @@ export default function Home() {
        
         <div className="flex flex-col">
           <div className="order-1 flex justify-center place-items-center mt-10">
-            <h1 className="text-7xl text-violet-500 font-bold pb-4">
+            <h1 className="text-7xl text-violet-500 font-bold lg:pb-4 py-4">
               Ben Shaw
             </h1>
           </div>
