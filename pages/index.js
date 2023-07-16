@@ -99,7 +99,7 @@ export default function Home() {
                   </h1>
                   <br></br>
                   <p className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-lg">
-                    I'm a front-end web developer capable of creating dynamic, functional and appealing websites through my knowledge of :
+                    {`I'm a front-end web developer capable of creating dynamic, functional and appealing websites through my knowledge of :`}
                     
                   </p>
                   <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
