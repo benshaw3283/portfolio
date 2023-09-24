@@ -44,7 +44,7 @@ const GmailTooltip = () => {
             sideOffset={5}
             side="right"
           >
-            benshaw.business@gmail.com
+            benshaw.dev@gmail.com
             <Tooltip.Arrow className={styles.TooltipArrow} />
           </Tooltip.Content>
         </Tooltip.Portal>
