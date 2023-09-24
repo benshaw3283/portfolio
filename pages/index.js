@@ -33,7 +33,7 @@ export default function Home() {
               d="M8 1C5.239 1 3 3.357 3 6.264S8 15 8 15s5-5.829 5-8.736C13 3.357 10.761 1 8 1zm0 2.925a1.667 1.755 0 0 1 1.667 1.754A1.667 1.755 0 0 1 8 7.434a1.667 1.755 0 0 1-1.667-1.755A1.667 1.755 0 0 1 8 3.925z"
             ></path>
           </svg>
-          <p className="pl-2 lg:text-base text-sm dark:text-white">
+          <p className="pl-2 lg:text-base text-sm dark:text-white text-white">
             Melbourne, Australia
           </p>
         </div>
@@ -68,7 +68,7 @@ export default function Home() {
             </h1>
           </div>
           <div className="order-2 place-self-center flex">
-            <h2 className="text-2xl font-semibold dark:text-white">
+            <h2 className="text-2xl font-semibold dark:text-white text-white">
               Front-End Developer
             </h2>
           </div>
@@ -84,7 +84,7 @@ export default function Home() {
           </div>
           <div className="order-5 place-self-center flex flex-col">
             <div className="order-1 place-self-center pb-6">
-              <h1 className="font-semibold text-2xl dark:text-white">
+              <h1 className="font-semibold text-2xl dark:text-white text-white">
                 ShawReviews
               </h1>
             </div>
