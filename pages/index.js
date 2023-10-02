@@ -1,15 +1,32 @@
 import Image from "next/image";
-import sr from "../public/ShawReviews.png";
+import Extension from "@/components/Extension";
 import GmailTooltip from "../components/Tooltip";
 import GmailPopover from "../components/Popover";
 import githubPhone from "../public/githubPhone.svg";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import ShawReviews from "@/components/ShawReviews";
 
 export default function Home() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    centerMode: false,
+    swipe: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    arrows: true,
+  };
+
   return (
     <div>
       <title>Ben Shaw</title>
-      <div className="min-h-screen bg-stone-950 ">
-        <div className="absolute pl-2 pt-2 lg:invisible z-10">
+      <div className="h-full bg-stone-950 ">
+        <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer">
           <Image
             alt="githubphone"
             src={githubPhone}
@@ -82,53 +99,32 @@ export default function Home() {
               Projects
             </h3>
           </div>
-          <div className="order-5 place-self-center flex flex-col">
-            <div className="order-1 place-self-center pb-6">
-              <h1 className="font-semibold text-2xl dark:text-white text-white">
-                ShawReviews
-              </h1>
-            </div>
-            <div className="order-2 flex flex-row py-2 justify-evenly">
-              <div
-                className="order-1 flex bg-violet-500 hover:bg-white rounded-lg p-2 border-2 border-white text-white  hover:border-violet-500 hover:text-violet-500 cursor-pointer"
-                onClick={() =>
-                  window.open("https://shawreviews.vercel.app", "_blank")
-                }
-              >
-                <p className="font-semibold">Go to website</p>
-              </div>
-              <div
-                className="order-2 flex bg-violet-500 hover:bg-white rounded-lg p-2 border-2 border-white text-white  hover:border-violet-500 hover:text-violet-500  cursor-pointer"
-                onClick={() =>
-                  window.open(
-                    "https://github.com/benshaw3283/movie-website",
-                    "_blank"
-                  )
-                }
-              >
-                <p className="font-semibold">Github Repository</p>
-              </div>
-            </div>
-            <div className="order-3 flex border-2 w-5/6 lg:w-full place-self-center">
-              <Image alt="shawreviews" src={sr} />
-            </div>
+          <div className="order-5 place-self-center flex ">
+            <Slider {...settings} className="w-[300px] lg:w-[800px]">
+              <ShawReviews />
+              <Extension />
+            </Slider>
           </div>
+
           <div className="order-6">
             <br></br>
             <br></br>
           </div>
 
-          <div className="order-7 flex h-80 w-full bg-white skew-y-3 lg:py-6 ">
+          <div className="order-7 flex h-full w-full bg-white skew-y-3 py-3 lg:py-6 ">
             <div className="flex flex-col">
               <h1 className="-skew-y-3 pl-8 text-black font-bold text-2xl order-1">
                 About me
               </h1>
               <br></br>
               <p className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-lg">
-                {`I'm a front-end web developer capable of creating dynamic, functional and appealing websites through my knowledge of :`}
+                {`I'm a front-end web developer capable of creating dynamic, functional and appealing websites & UI through my knowledge of (to name a few) :`}
               </p>
               <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
                 React
+              </li>
+              <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
+                Typescript
               </li>
               <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
                 Tailwindcss
@@ -142,6 +138,7 @@ export default function Home() {
               </li>
             </div>
           </div>
+          <div className="bg-slate-850 h-6 lg:h-14 flex order-8"></div>
         </div>
       </div>
     </div>
