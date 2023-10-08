@@ -1,5 +1,6 @@
 import Image from "next/image";
 import snip from "@/public/extensionSnip.png";
+import box from "@/public/box.png";
 
 const Extension = () => {
   return (
@@ -37,7 +38,12 @@ const Extension = () => {
         </div>
       </div>
       <div className="order-3 flex border-2 w-5/6 lg:w-full place-self-center justify-center">
-        <Image alt="extension" src={snip} />
+        <Image alt="extension" src={snip} className="lg:w-1/2 w-full" />
+        <Image
+          alt="box"
+          src={box}
+          className="lg:w-1/2 lg:visible absolute lg:relative invisible"
+        />
       </div>
     </div>
   );
