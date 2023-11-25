@@ -7,6 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ShawReviews from "@/components/ShawReviews";
+import BG from "../public/BG20.png";
 
 export default function Home() {
   const settings = {
@@ -25,7 +26,9 @@ export default function Home() {
   return (
     <div>
       <title>Ben Shaw</title>
-      <div className="h-full bg-stone-950 ">
+
+      <div className="h-full bg-black ">
+        <Image src={BG} layout="fill" alt="bg" />
         <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer">
           <Image
             alt="githubphone"
@@ -79,12 +82,12 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col">
-          <div className="order-1 flex justify-center place-items-center mt-10">
-            <h1 className="text-7xl text-violet-500 font-bold lg:pb-4 py-4">
+          <div className="order-1 flex justify-center place-items-center mt-10 z-10">
+            <h1 className="text-7xl text-violet-500 font-bold lg:pb-4 py-4 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255)]">
               Ben Shaw
             </h1>
           </div>
-          <div className="order-2 place-self-center flex">
+          <div className="order-2 place-self-center flex z-10">
             <h2 className="text-2xl font-semibold dark:text-white text-white">
               Front-End Developer
             </h2>
@@ -94,8 +97,8 @@ export default function Home() {
             <br></br>
             <br></br>
           </div>
-          <div className="order-4 place-self-center flex pb-10">
-            <h3 className="text-3xl border-x-2 border-white p-2 rounded-md text-violet-500 font-semibold">
+          <div className="order-4 place-self-center flex pb-10 z-10">
+            <h3 className="text-3xl border-x-2 border-white p-2 rounded-md text-white font-bold">
               Projects
             </h3>
           </div>

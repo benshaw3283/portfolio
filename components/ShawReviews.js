@@ -5,7 +5,7 @@ const ShawReviews = () => {
   return (
     <div className="flex flex-col">
       <div className="order-1 place-self-center pb-6 flex justify-center">
-        <h1 className="font-semibold text-2xl dark:text-white text-white flex ">
+        <h1 className="font-semibold text-3xl dark:text-white text-white flex ">
           ShawReviews
         </h1>
       </div>
