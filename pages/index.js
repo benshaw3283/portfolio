@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ShawReviews from "@/components/ShawReviews";
-import BG from "../public/BG20.png";
+import BG from "../public/sky_bg.jpg";
 
 export default function Home() {
   const settings = {
