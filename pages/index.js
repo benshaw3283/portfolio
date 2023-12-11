@@ -28,7 +28,7 @@ export default function Home() {
       <title>Ben Shaw</title>
 
       <div className="h-full bg-black ">
-        <Image src={BG} layout="fill" alt="bg" />
+        <Image src={BG} layout="fill" alt="bg" loading="eager" priority />
         <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer">
           <Image
             alt="githubphone"
@@ -60,7 +60,7 @@ export default function Home() {
         <div className="absolute lg:top-2 top-40 pl-4 place-self-start flex lg:flex-col">
           <br></br>
           <div
-            className="flex order-1 pb-2 cursor-pointer lg:visible invisible"
+            className="flex order-1 pb-2 cursor-pointer lg:visible invisible "
             onClick={() =>
               window.open("https://github.com/benshaw3283", "_blank")
             }
@@ -114,7 +114,7 @@ export default function Home() {
             <br></br>
           </div>
 
-          <div className="order-7 flex h-full w-full bg-white skew-y-3 py-3 lg:py-6 ">
+          <div className="order-7 flex h-full w-full bg-white skew-y-3 py-3 lg:py-6 pb-8">
             <div className="flex flex-col">
               <h1 className="-skew-y-3 pl-8 text-black font-bold text-2xl order-1">
                 About me
@@ -133,8 +133,8 @@ export default function Home() {
                 Tailwindcss
               </li>
               <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
-                UI component libraries like <strong>Radix UI</strong> and{" "}
-                <strong>Material UI</strong>
+                UI component libraries like <strong>Radix UI</strong>,{" "}
+                <strong>Material UI</strong> and <strong>shadcn</strong>
               </li>
               <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
                 Tanstack Query
