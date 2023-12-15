@@ -11,7 +11,7 @@ const GmailPopover = () => (
     </Popover.Trigger>
     <Popover.Portal>
       <Popover.Content className={styles.PopoverContent} sideOffset={5}>
-        <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
+        <div className="flex flex-col gap-10 z-[100]">
           <p className="text-black font-bold text-sm">benshaw.dev@gmail.com</p>
         </div>
       </Popover.Content>
