@@ -28,7 +28,13 @@ export default function Home() {
       <title>Ben Shaw</title>
 
       <div className="h-full bg-black ">
-        <Image src={BG} layout="fill" alt="bg" loading="eager" priority />
+        <Image
+          src={BG}
+          className="w-full h-full absolute"
+          alt="bg"
+          loading="eager"
+          priority
+        />
         <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer">
           <Image
             alt="githubphone"
