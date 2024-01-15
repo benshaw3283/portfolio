@@ -63,7 +63,7 @@ export default function Home() {
             Melbourne, Australia
           </p>
         </div>
-        <div className="absolute lg:top-2 top-40 pl-4 place-self-start flex lg:flex-col">
+        <div className="absolute lg:top-2 top-40 pl-4 place-self-start flex lg:flex-col ">
           <br></br>
           <div
             className="flex order-1 pb-2 cursor-pointer lg:visible invisible "
@@ -80,7 +80,7 @@ export default function Home() {
               />
             </svg>
           </div>
-          <div className="order-2 flex lg:visible invisible">
+          <div className="order-1 flex lg:visible invisible">
             <div className="bg-white rounded-full p-1">
               <GmailTooltip />
             </div>
@@ -88,7 +88,7 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col">
-          <div className="order-1 flex justify-center place-items-center mt-10 z-10">
+          <div className="order-1 flex justify-center place-items-center mt-10">
             <h1 className="text-7xl text-violet-500 font-bold lg:pb-4 py-4 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255)]">
               Ben Shaw
             </h1>
@@ -120,30 +120,34 @@ export default function Home() {
             <br></br>
           </div>
 
-          <div className="order-7 flex h-full w-full bg-white skew-y-3 py-3 lg:py-6 pb-8">
+          <div className="order-7 flex h-full lg:h-[450px] w-full bg-white skew-y-3 py-3 lg:py-6 pb-8">
             <div className="flex flex-col">
               <h1 className="-skew-y-3 pl-8 text-black font-bold text-2xl order-1">
                 About me
               </h1>
               <br></br>
-              <p className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-lg">
+              <p className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-lg">
                 {`I'm a front-end web developer capable of creating dynamic, functional and appealing websites & UI through my knowledge of (to name a few) :`}
               </p>
-              <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
+              <li className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-base text-sm">
                 React
               </li>
-              <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
+              <li className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-base text-sm">
                 Typescript
               </li>
-              <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
+              <li className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-base text-sm">
                 Tailwindcss
               </li>
-              <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
+              <li className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-base text-sm">
                 UI component libraries like <strong>Radix UI</strong>,{" "}
                 <strong>Material UI</strong> and <strong>shadcn</strong>
               </li>
-              <li className="text-black order-2 pl-12 pt-4 -skew-y-3 lg:text-base text-sm">
+              <li className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-base text-sm">
                 Tanstack Query
+              </li>
+              <li className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-base text-sm">
+                Understanding of document & relational based databases like{" "}
+                <strong>MongoDB</strong> and <strong>MySQL</strong>
               </li>
             </div>
           </div>
