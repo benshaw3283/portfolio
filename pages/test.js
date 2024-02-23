@@ -17,7 +17,7 @@ const Test = () => {
     },
   };
   return (
-    <div className="w-[500px] h-24 flex justify-center translate-x-60 -translate-y-[340px] scale-150">
+    <div className="w-[500px] h-24 flex justify-center translate-x-[246px] -translate-y-[340px] scale-150">
       <motion.svg
         width="600"
         height="600"
