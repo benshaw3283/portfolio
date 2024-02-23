@@ -9,6 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ShawReviews from "@/components/ShawReviews";
 import Background from "./test2";
 import { motion } from "framer-motion";
+import Test from "./test";
 
 export default function Home() {
   const settings = {
@@ -84,36 +85,9 @@ export default function Home() {
 
         <div className="flex flex-col">
           <div className="order-1 flex justify-center place-items-center mt-10 gap-2">
-            <motion.h1
-              className=" pr-1  z-50 text-7xl text-violet-500 font-bold lg:pb-4 py-4 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255)]"
-              initial={{
-                y: -300,
-                scale: 0,
-              }}
-              animate={{
-                scale: 1,
-                y: 0,
-              }}
-              exit={{ y: 0 }}
-              transition={{ duration: 2, type: "spring", bounce: 0.5 }}
-            >
-              Ben
-            </motion.h1>
-            <motion.h1
-              className=" z-50 text-7xl text-violet-500 font-bold lg:pb-4 py-4 drop-shadow-[0_1.2px_1.2px_rgba(255,255,255)]"
-              initial={{
-                y: 300,
-                scale: 0,
-              }}
-              animate={{
-                scale: 1,
-                y: 0,
-              }}
-              transition={{ duration: 2, type: "spring", bounce: 0.5 }}
-            >
-              Shaw
-            </motion.h1>
+            <Test />
           </div>
+
           <div className="order-2 place-self-center flex z-10">
             <h2 className="text-2xl font-semibold dark:text-white text-white">
               Front-End Developer
