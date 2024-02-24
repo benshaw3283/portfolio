@@ -8,7 +8,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import ShawReviews from "@/components/ShawReviews";
 import Background from "./test2";
-import { motion } from "framer-motion";
+
 import Test from "./test";
 
 export default function Home() {
@@ -29,7 +29,7 @@ export default function Home() {
     <div>
       <title>Ben Shaw</title>
 
-      <div className="h-full bg-black ">
+      <div className="h-full bg-black w-full">
         <Background />
         <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer">
           <Image
@@ -83,13 +83,13 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex flex-col">
-          <div className="order-1 flex justify-center place-items-center mt-10 gap-2">
+        <div className="flex flex-col ">
+          <div className="order-1 flex justify-center place-items-center">
             <Test />
           </div>
 
-          <div className="order-2 place-self-center flex z-10">
-            <h2 className="text-2xl font-semibold dark:text-white text-white">
+          <div className="order-2 place-self-center flex z-10 pt-4">
+            <h2 className="text-xl font-semibold dark:text-white text-white">
               Front-End Developer
             </h2>
           </div>
@@ -141,8 +141,11 @@ export default function Home() {
                 Tanstack Query
               </li>
               <li className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-base text-sm">
-                Understanding of document & relational based databases like{" "}
+                Document & relational based databases like{" "}
                 <strong>MongoDB</strong> and <strong>MySQL</strong>
+              </li>
+              <li className="text-black order-2 pl-10 pt-4 -skew-y-3 lg:text-base text-sm">
+                Animation using <strong>Framer Motion</strong>
               </li>
             </div>
           </div>

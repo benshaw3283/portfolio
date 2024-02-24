@@ -17,14 +17,14 @@ const Test = () => {
     },
   };
   return (
-    <div className="w-[500px] h-24 flex justify-center translate-x-[246px] -translate-y-[340px] scale-150">
+    <div className="w-[500px] scale-75 lg:w-[600px]  h-24 flex justify-center -translate-y-32 translate-x-2">
       <motion.svg
         width="600"
         height="600"
         viewBox="0 0 500 500"
         initial="hidden"
         animate="visible"
-        className="translate-x-1"
+        className="translate-x-24"
       >
         <motion.line
           x1="120"
@@ -60,7 +60,7 @@ const Test = () => {
         viewBox="0 0 500 500"
         initial="hidden"
         animate="visible"
-        className="-translate-x-[54px]"
+        className="translate-x-14"
       >
         <motion.line
           x1="120"
@@ -109,7 +109,7 @@ const Test = () => {
         viewBox="0 0 500 500"
         initial="hidden"
         animate="visible"
-        className="-translate-x-[108px]"
+        className="translate-x-6"
       >
         <motion.line
           x1="120"
@@ -148,7 +148,7 @@ const Test = () => {
         viewBox="0 0 500 500"
         initial="hidden"
         animate="visible"
-        className="-translate-x-36"
+        className="translate-x-6"
       >
         <motion.path
           strokeWidth="20"
@@ -165,7 +165,7 @@ const Test = () => {
         viewBox="0 0 500 500"
         initial="hidden"
         animate="visible"
-        className="-translate-x-52"
+        className="-translate-x-6"
       >
         <motion.line
           x1="120"
@@ -204,7 +204,7 @@ const Test = () => {
         viewBox="0 0 500 500"
         initial="hidden"
         animate="visible"
-        className="-translate-x-[274px]"
+        className="-translate-x-[72px]"
       >
         <motion.line
           x1="260"
@@ -243,7 +243,7 @@ const Test = () => {
         viewBox="0 0 500 500"
         initial="hidden"
         animate="visible"
-        className="-translate-x-[318px]"
+        className="-translate-x-24"
       >
         <motion.line
           x1="120"
