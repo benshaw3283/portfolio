@@ -1,5 +1,5 @@
 import Image from "next/image";
-import sr from "@/public/srpcsnip.png";
+import sr from "@/public/srpcsnip.PNG";
 
 const ShawReviews = () => {
   return (
