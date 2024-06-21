@@ -14,7 +14,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function Home() {
   const { ref, inView } = useInView({
-    threshold: 0.4,
+    threshold: 0.2,
   });
   const settings = {
     dots: true,
@@ -127,7 +127,7 @@ export default function Home() {
             <motion.div
               animate={inView ? "in" : "out"}
               variants={variants}
-              transition={{ duration: 0.1 }}
+              transition={{ duration: 0.2 }}
               className=" w-[94%] h-fit flex flex-col text-white  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
             >
               <p className="text-2xl font-bold pb-4 font-switzer">About me</p>

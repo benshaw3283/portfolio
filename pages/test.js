@@ -5,7 +5,7 @@ const Test = () => {
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
     visible: () => {
-      const delay = 0.2;
+      const delay = 0.5;
       return {
         pathLength: 1,
         opacity: 1,
