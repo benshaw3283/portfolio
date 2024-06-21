@@ -98,7 +98,7 @@ export default function Home() {
           </div>
 
           <div className="order-2 place-self-center flex z-10 pt-4">
-            <h2 className="text-lg lg:text-2xl font-light font-switzer dark:text-white text-white">
+            <h2 className=" lg:text-2xl font-light font-switzer dark:text-white text-white">
               Front-End Developer
             </h2>
           </div>
@@ -127,7 +127,7 @@ export default function Home() {
             <motion.div
               animate={inView ? "in" : "out"}
               variants={variants}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.1 }}
               className=" w-[94%] h-fit flex flex-col text-white  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
             >
               <p className="text-2xl font-bold pb-4 font-switzer">About me</p>
@@ -229,9 +229,9 @@ export default function Home() {
                 </ul>
               </div>
               <div className="pt-2 font-switzer">
-                <p className="font-semibold">to name a few..</p>
+                <p className="font-semibold pl-2">to name a few..</p>
                 <p className="pt-4 font-semibold font text-lg">
-                  Please feel free to email me with any opportunities!
+                  Please feel free to email me!
                 </p>
               </div>
             </motion.div>

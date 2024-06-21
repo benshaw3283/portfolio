@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 const Test = () => {
   const draw = {
     hidden: { pathLength: 0, opacity: 0 },
-    visible: (i) => {
-      const delay = 1 + i * 0.5;
+    visible: () => {
+      const delay = 0.2;
       return {
         pathLength: 1,
         opacity: 1,
