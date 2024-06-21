@@ -38,7 +38,7 @@ export default function Home() {
     <div>
       <title>Ben Shaw</title>
 
-      <div className="h-full bg-black w-full">
+      <div className="h-full bg-black w-full cursor-none">
         <Background />
         <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer">
           <Image
@@ -108,7 +108,7 @@ export default function Home() {
             <br></br>
           </div>
           <div className="order-4 place-self-center flex pb-10 z-10">
-            <h3 className=" text-3xl shadow-sm shadow-purple-500 p-2 rounded-md text-white font-switzer font-bold">
+            <h3 className="cursor-none text-3xl shadow-sm shadow-purple-500 p-2 rounded-md text-white font-switzer font-bold">
               PROJECTS
             </h3>
           </div>
@@ -128,7 +128,7 @@ export default function Home() {
               animate={inView ? "in" : "out"}
               variants={variants}
               transition={{ duration: 0.2 }}
-              className=" w-[94%] h-fit flex flex-col text-white  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
+              className="cursor-none w-[94%] h-fit flex flex-col text-white  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
             >
               <p className="text-2xl font-bold pb-4 font-switzer">About me</p>
               <p className="flex pb-6  lg:text-xl font-switzer">
