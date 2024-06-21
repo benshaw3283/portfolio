@@ -128,7 +128,7 @@ export default function Home() {
               animate={inView ? "in" : "out"}
               variants={variants}
               transition={{ duration: 0.5 }}
-              className=" w-[94%] h-fit flex flex-col  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
+              className=" w-[94%] h-fit flex flex-col text-white  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
             >
               <p className="text-2xl font-bold pb-4 font-switzer">About me</p>
               <p className="flex pb-6  lg:text-xl font-switzer">
