@@ -6,7 +6,7 @@ const Extension = () => {
   return (
     <div className="flex flex-col">
       <div className="order-1 place-self-center  flex justify-center">
-        <h1 className="font-semibold text-3xl dark:text-white text-white flex ">
+        <h1 className="font-switzer font-semibold text-3xl dark:text-white text-white flex ">
           NBA Daily
         </h1>
       </div>
