@@ -14,7 +14,7 @@ import { useInView } from "react-intersection-observer";
 
 export default function Home() {
   const { ref, inView } = useInView({
-    threshold: 0.2,
+    threshold: 0.3,
   });
   const settings = {
     dots: true,
@@ -31,7 +31,7 @@ export default function Home() {
 
   const variants = {
     in: { scale: 1 },
-    out: { scale: 0 },
+    out: { scale: 0.25 },
   };
 
   return (
@@ -85,10 +85,8 @@ export default function Home() {
               />
             </svg>
           </div>
-          <div className="order-1 flex lg:visible invisible z-50">
-            <div className="bg-white rounded-full p-1">
-              <GmailTooltip />
-            </div>
+          <div className="order-1 pl-1 flex lg:visible invisible z-50">
+            <GmailTooltip />
           </div>
         </div>
 
@@ -127,7 +125,7 @@ export default function Home() {
             <motion.div
               animate={inView ? "in" : "out"}
               variants={variants}
-              transition={{ duration: 0.2 }}
+              transition={{ duration: 0.4 }}
               className="cursor-none w-[94%] h-fit flex flex-col text-white  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
             >
               <p className="text-2xl font-bold pb-4 font-switzer">About me</p>
