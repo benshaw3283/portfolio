@@ -11,6 +11,7 @@ import Background from "./test2";
 import { motion } from "framer-motion";
 import Test from "./test";
 import { useInView } from "react-intersection-observer";
+import Resume from "@/components/Resume";
 
 export default function Home() {
   const { ref, inView } = useInView({
@@ -40,7 +41,7 @@ export default function Home() {
 
       <div className="h-full bg-black w-full cursor-none">
         <Background />
-        <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer">
+        <div className="gap-3 absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer flex flex-col">
           <Image
             alt="githubphone"
             src={githubPhone}
@@ -48,6 +49,8 @@ export default function Home() {
               window.open("https://github.com/benshaw3283", "_blank")
             }
           />
+
+          <Resume />
         </div>
         <div className="absolute pl-16 pt-2 lg:invisible visible">
           <GmailPopover />
@@ -88,6 +91,8 @@ export default function Home() {
           <div className="order-1 pl-1 flex lg:visible invisible z-50">
             <GmailTooltip />
           </div>
+
+          <Resume />
         </div>
 
         <div className="flex flex-col ">
