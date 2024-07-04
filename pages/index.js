@@ -15,7 +15,7 @@ import Resume from "@/components/Resume";
 
 export default function Home() {
   const { ref, inView } = useInView({
-    threshold: 0.3,
+    threshold: 0.5,
   });
   const settings = {
     dots: true,
@@ -31,8 +31,8 @@ export default function Home() {
   };
 
   const variants = {
-    in: { scale: 1 },
-    out: { scale: 0.25 },
+    in: { opacity: 1 },
+    out: { opacity: 0 },
   };
 
   return (
