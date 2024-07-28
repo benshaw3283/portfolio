@@ -9,17 +9,17 @@ const ShawReviews = () => {
           ShawReviews
         </h1>
       </div>
-      <div className="order-2 flex flex-row py-2 justify-evenly">
-        <div
-          className="order-1 flex bg-violet-500 hover:bg-white rounded-lg p-2 border-2 border-white text-white  hover:border-violet-500 hover:text-violet-500 cursor-pointer"
+      <div className="order-2 flex flex-row py-2 justify-center gap-2">
+        <button
+          className="order-1 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
           onClick={() =>
             window.open("https://shawreviews.vercel.app", "_blank")
           }
         >
-          <p className="font-semibold">Go to website</p>
-        </div>
-        <div
-          className="order-2 flex bg-violet-500 hover:bg-white rounded-lg p-2 border-2 border-white text-white  hover:border-violet-500 hover:text-violet-500  cursor-pointer"
+          <p className="font-semibold text-xl">Website</p>
+        </button>
+        <button
+          className="order-2 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg p-2 text-white   cursor-pointer"
           onClick={() =>
             window.open(
               "https://github.com/benshaw3283/movie-website",
@@ -27,8 +27,8 @@ const ShawReviews = () => {
             )
           }
         >
-          <p className="font-semibold">Github Repository</p>
-        </div>
+          <p className="font-bold text-xl">Github</p>
+        </button>
       </div>
       <div className="order-3 flex border-2 w-5/6 lg:w-full place-self-center justify-center">
         <Image alt="shawreviews" src={sr} />

@@ -96,12 +96,31 @@ export default function Home() {
         </div>
 
         <div className="flex flex-col ">
-          <div className="order-1 flex justify-center place-items-center">
-            <Test />
+          <div className=" order-1 flex justify-center items-baseline mt-20 flex-row font-Chillax lg:text-9xl">
+            <p className="text-white z-10 font-Chillax text-7xl lg:text-7xl">
+              B
+            </p>
+            <motion.p
+              initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+              animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="text-white z-10 text-7xl"
+            >
+              en
+            </motion.p>
+            <p className="text-white flex text-7xl z-10 pl-4">S</p>
+            <motion.p
+              initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+              animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+              transition={{ duration: 1 }}
+              className="text-white z-10 text-7xl"
+            >
+              haw
+            </motion.p>
           </div>
 
           <div className="order-2 place-self-center flex z-10 pt-4">
-            <h2 className=" lg:text-2xl font-light font-switzer dark:text-white text-white">
+            <h2 className=" lg:text-2xl text-xl font-light font-Chillax dark:text-white text-white">
               Front-End Developer
             </h2>
           </div>
@@ -111,7 +130,7 @@ export default function Home() {
             <br></br>
           </div>
           <div className="order-4 place-self-center flex pb-10 z-10">
-            <h3 className="cursor-none text-3xl shadow-sm shadow-purple-500 p-2 rounded-md text-white font-switzer font-bold">
+            <h3 className="cursor-none text-2xl shadow-sm shadow-purple-500 p-2 rounded-md text-white font-Switzer font-bold">
               PROJECTS
             </h3>
           </div>
@@ -121,7 +140,6 @@ export default function Home() {
               <Extension />
             </Slider>
           </div>
-
           <div className="order-6">
             <br></br>
             <br></br>
@@ -133,8 +151,8 @@ export default function Home() {
               transition={{ duration: 0.4 }}
               className="cursor-none w-[94%] h-fit flex flex-col text-white  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
             >
-              <p className="text-2xl font-bold pb-4 font-switzer">About me</p>
-              <p className="flex pb-6  lg:text-xl font-switzer">
+              <p className="text-3xl font-bold pb-4 font-Chillax">About me</p>
+              <p className="flex pb-6  lg:text-xl  font-Switzer">
                 {`I'm a front-end developer capable of creating responsive, user-friendly and modern websites through my knowledge of :`}
               </p>
               <div className="flex flex-row">
