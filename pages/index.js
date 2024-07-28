@@ -25,7 +25,7 @@ export default function Home() {
     slidesToScroll: 1,
     centerMode: false,
     swipe: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 5000,
     arrows: true,
   };
