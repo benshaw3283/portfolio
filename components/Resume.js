@@ -18,7 +18,7 @@ const Resume = () => {
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="white"
-          className=" lg:mb-2"
+          className=" lg:mb-2 w-10 lg:w-28"
         >
           <path
             strokeLinecap="round"

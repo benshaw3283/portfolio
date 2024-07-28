@@ -6,16 +6,16 @@ const Extension = () => {
   return (
     <div className="flex flex-col">
       <div className="order-1 place-self-center  flex justify-center">
-        <h1 className="font-switzer font-semibold text-3xl dark:text-white text-white flex ">
+        <h1 className="font-Chillax tracking-wide lg:text-5xl font-semibold text-4xl dark:text-white text-white flex ">
           NBA Daily
         </h1>
       </div>
       <div className="order-2 place-self-center flex justify-center">
         <h2 className="text-gray-400 text-xs flex">Chrome Extension</h2>
       </div>
-      <div className="order-2 flex flex-row py-2 justify-evenly">
-        <div
-          className="order-1 flex bg-violet-500 hover:bg-white rounded-lg p-2 border-2 border-white text-white  hover:border-violet-500 hover:text-violet-500 cursor-pointer"
+      <div className="order-2 flex flex-row py-2 justify-center gap-2">
+        <button
+          className="order-1 flex btn-shine hover:scale-105 bg-black order-1 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
           onClick={() =>
             window.open(
               "https://chrome.google.com/webstore/detail/nba-daily/eplagjpgcidlidnopgeakefijdkjjjbd",
@@ -23,10 +23,10 @@ const Extension = () => {
             )
           }
         >
-          <p className="font-semibold">Download</p>
-        </div>
-        <div
-          className="order-2 flex bg-violet-500 hover:bg-white rounded-lg p-2 border-2 border-white text-white  hover:border-violet-500 hover:text-violet-500  cursor-pointer"
+          <p className="font-bold text-xl">Download</p>
+        </button>
+        <button
+          className="order-2 flex btn-shine hover:scale-105 bg-black order-1 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
           onClick={() =>
             window.open(
               "https://github.com/benshaw3283/nba-extension",
@@ -34,8 +34,8 @@ const Extension = () => {
             )
           }
         >
-          <p className="font-semibold">Github Repository</p>
-        </div>
+          <p className="font-bold text-xl">Github</p>
+        </button>
       </div>
       <div className="order-3 flex border-2 w-5/6 lg:w-full place-self-center justify-center">
         <Image alt="extension" src={snip} className="lg:w-1/2 w-full" />

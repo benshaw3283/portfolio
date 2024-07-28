@@ -5,21 +5,21 @@ const ShawReviews = () => {
   return (
     <div className="flex flex-col">
       <div className="order-1 place-self-center pb-6 flex justify-center">
-        <h1 className="font-semibold font-switzer text-3xl dark:text-white text-white flex ">
+        <h1 className=" font-Chillax text-4xl lg:text-5xl font-semibold tracking-wider dark:text-white text-white flex ">
           ShawReviews
         </h1>
       </div>
       <div className="order-2 flex flex-row py-2 justify-center gap-2">
         <button
-          className="order-1 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
+          className="btn-shine hover:scale-105 bg-black order-1 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
           onClick={() =>
             window.open("https://shawreviews.vercel.app", "_blank")
           }
         >
-          <p className="font-semibold text-xl">Website</p>
+          <p className="font-bold text-xl">Website</p>
         </button>
         <button
-          className="order-2 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg p-2 text-white   cursor-pointer"
+          className="btn-shine hover:scale-105 bg-black order-2 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg p-2 text-white   cursor-pointer"
           onClick={() =>
             window.open(
               "https://github.com/benshaw3283/movie-website",

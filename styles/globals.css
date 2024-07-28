@@ -15,6 +15,28 @@
   font-style: normal;
 }
 
+.btn-shine {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shine::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -150%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: skewX(-45deg);
+  transition: left 0.5s ease-in-out;
+}
+
+.btn-shine:hover::before {
+  left: 150%;
+  transition: left 0.5s ease-in-out;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import ShawReviews from "@/components/ShawReviews";
 import Background from "./test2";
 import { motion } from "framer-motion";
-import Test from "./test";
+
 import { useInView } from "react-intersection-observer";
 import Resume from "@/components/Resume";
 
@@ -25,7 +25,7 @@ export default function Home() {
     slidesToScroll: 1,
     centerMode: false,
     swipe: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
     arrows: true,
   };
@@ -41,7 +41,8 @@ export default function Home() {
 
       <div className="h-full bg-black w-full cursor-none">
         <Background />
-        <div className="gap-3 absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer flex flex-col">
+
+        <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer ">
           <Image
             alt="githubphone"
             src={githubPhone}
@@ -49,12 +50,15 @@ export default function Home() {
               window.open("https://github.com/benshaw3283", "_blank")
             }
           />
-
-          <Resume />
         </div>
-        <div className="absolute pl-16 pt-2 lg:invisible visible">
+
+        <div className="absolute pl-14 pt-2 lg:invisible visible cursor-pointer z-10">
           <GmailPopover />
         </div>
+        <div className="absolute pl-[100px] pt-2 lg:invisible">
+          <Resume />
+        </div>
+
         <div className=" absolute top-1 lg:right-4 right-2 justify-end place-items-center flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -67,14 +71,14 @@ export default function Home() {
               d="M8 1C5.239 1 3 3.357 3 6.264S8 15 8 15s5-5.829 5-8.736C13 3.357 10.761 1 8 1zm0 2.925a1.667 1.755 0 0 1 1.667 1.754A1.667 1.755 0 0 1 8 7.434a1.667 1.755 0 0 1-1.667-1.755A1.667 1.755 0 0 1 8 3.925z"
             ></path>
           </svg>
-          <p className="pl-2 lg:text-base text-sm dark:text-white text-white">
+          <p className="pl-2 font-Switzer lg:text-base text-sm dark:text-white text-white">
             Melbourne, Australia
           </p>
         </div>
-        <div className="absolute lg:top-2 top-40 pl-4 place-self-start flex lg:flex-col ">
+        <div className="absolute lg:top-2 top-40  place-self-start flex lg:flex-col ">
           <br></br>
           <div
-            className="flex order-1 pb-2 cursor-pointer lg:visible invisible "
+            className="flex order-1 pl-4 pb-2 cursor-pointer lg:visible invisible "
             onClick={() =>
               window.open("https://github.com/benshaw3283", "_blank")
             }
@@ -88,39 +92,40 @@ export default function Home() {
               />
             </svg>
           </div>
-          <div className="order-1 pl-1 flex lg:visible invisible z-50">
+          <div className="order-1  pl-5 flex lg:visible invisible z-50">
             <GmailTooltip />
           </div>
-
-          <Resume />
+          <div className="invisible lg:visible pl-2">
+            <Resume />
+          </div>
         </div>
 
         <div className="flex flex-col ">
-          <div className=" order-1 flex justify-center items-baseline mt-20 flex-row font-Chillax lg:text-9xl">
-            <p className="text-white z-10 font-Chillax text-7xl lg:text-7xl">
+          <div className=" order-1 flex justify-center items-baseline mt-20 flex-row font-Chillax ">
+            <p className="text-white z-10 font-Chillax text-7xl lg:text-9xl">
               B
             </p>
             <motion.p
               initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
               animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
               transition={{ duration: 1 }}
-              className="text-white z-10 text-7xl"
+              className="text-white z-10 text-7xl lg:text-9xl"
             >
               en
             </motion.p>
-            <p className="text-white flex text-7xl z-10 pl-4">S</p>
+            <p className="text-white flex text-7xl z-10 pl-4 lg:text-9xl">S</p>
             <motion.p
               initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
               animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
               transition={{ duration: 1 }}
-              className="text-white z-10 text-7xl"
+              className="text-white z-10 text-7xl lg:text-9xl"
             >
               haw
             </motion.p>
           </div>
 
           <div className="order-2 place-self-center flex z-10 pt-4">
-            <h2 className=" lg:text-2xl text-xl font-light font-Chillax dark:text-white text-white">
+            <h2 className=" lg:text-3xl text-xl font-light font-Chillax dark:text-white text-white">
               Front-End Developer
             </h2>
           </div>
@@ -129,8 +134,8 @@ export default function Home() {
             <br></br>
             <br></br>
           </div>
-          <div className="order-4 place-self-center flex pb-10 z-10">
-            <h3 className="cursor-none text-2xl shadow-sm shadow-purple-500 p-2 rounded-md text-white font-Switzer font-bold">
+          <div className="order-4 place-self-center flex pb-6 z-10">
+            <h3 className="cursor-none text-2xl border-b border-purple-500  p-2 rounded-md text-white font-Chillax font-bold">
               PROJECTS
             </h3>
           </div>
