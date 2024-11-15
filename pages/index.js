@@ -6,7 +6,7 @@ import githubPhone from "../public/githubPhone.svg";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import ShawReviews from "@/components/ShawReviews";
+import Messengerstats from "@/components/messengerstats";
 import Background from "./test2";
 import { motion } from "framer-motion";
 
@@ -42,7 +42,7 @@ export default function Home() {
       <div className="h-full bg-black w-full cursor-none">
         <Background />
 
-        <div className="absolute pl-2 pt-2 lg:invisible z-10 cursor-pointer ">
+        <div className="absolute scale-90 pl-2 pt-2 lg:invisible z-10 cursor-pointer ">
           <Image
             alt="githubphone"
             src={githubPhone}
@@ -52,10 +52,10 @@ export default function Home() {
           />
         </div>
 
-        <div className="absolute pl-14 pt-2 lg:invisible visible cursor-pointer z-10">
+        <div className="absolute scale-90 pl-14 pt-2 lg:invisible visible cursor-pointer z-10">
           <GmailPopover />
         </div>
-        <div className="absolute pl-[100px] pt-2 lg:invisible">
+        <div className="absolute pl-[100px] scale-90 pt-2 lg:invisible">
           <Resume />
         </div>
 
@@ -141,7 +141,7 @@ export default function Home() {
           </div>
           <div className="order-5 place-self-center flex ">
             <Slider {...settings} className="w-[300px] lg:w-[800px]">
-              <ShawReviews />
+              <Messengerstats />
               <Extension />
             </Slider>
           </div>
