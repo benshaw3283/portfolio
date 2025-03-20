@@ -1,5 +1,5 @@
 import Image from "next/image";
-import ms from "@/public/messengerstats.png";
+import ms from "../public/messengerstats.png";
 
 const Messengerstats = () => {
   return (

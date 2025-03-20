@@ -1,6 +1,6 @@
 import Image from "next/image";
-import snip from "@/public/extensionSnip.png";
-import box from "@/public/box.png";
+import snip from "../public/nbadaily.png";
+import box from "../public/nbadailybox.png";
 
 const Extension = () => {
   return (
@@ -15,7 +15,7 @@ const Extension = () => {
       </div>
       <div className="order-2 flex flex-row py-2 justify-center gap-2">
         <button
-          className="order-1 flex btn-shine hover:scale-105 bg-black order-1 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
+          className="order-1 flex btn-shine hover:scale-105 bg-black  shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
           onClick={() =>
             window.open(
               "https://chrome.google.com/webstore/detail/nba-daily/eplagjpgcidlidnopgeakefijdkjjjbd",
@@ -26,7 +26,7 @@ const Extension = () => {
           <p className="font-bold text-xl">Download</p>
         </button>
         <button
-          className="order-2 flex btn-shine hover:scale-105 bg-black order-1 flex shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
+          className="order-2 flex btn-shine hover:scale-105 bg-black shadow-purple-500  shadow-inner border border-purple-500 rounded-lg text-white items-center p-1"
           onClick={() =>
             window.open(
               "https://github.com/benshaw3283/nba-extension",
