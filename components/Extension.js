@@ -1,6 +1,6 @@
 import Image from "next/image";
-import snip from "../public/nbadaily.png";
-import box from "../public/nbadailybox.png";
+import snip from "../public/nbadaily.PNG";
+import box from "../public/nbadailybox.PNG";
 
 const Extension = () => {
   return (
