@@ -7,18 +7,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "../components/ui/dialog";
+import Image from "next/image";
 
 const Resume = () => {
   return (
     <Dialog>
-      <DialogTrigger>
+      <DialogTrigger className="lg:mb-2 w-10 lg:w-28 hover:scale-105">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
           stroke="white"
-          className=" lg:mb-2 w-10 lg:w-28"
         >
           <path
             strokeLinecap="round"
@@ -27,17 +27,37 @@ const Resume = () => {
           />
         </svg>
       </DialogTrigger>
-      <DialogContent className="bg-black text-white border-2 w-64 lg:w-80 rounded-lg border-purple-600">
-        <DialogHeader>
-          <DialogTitle className="text-white">Download resume?</DialogTitle>
-          <DialogDescription>
-            <a href="/resume.pdf" download="/resume.pdf">
-              <button className="hover:scale-110 rounded-lg border-2 p-2 border-purple-600 mt-6 text-white font-semibold">
-                Download
-              </button>
-            </a>
-          </DialogDescription>
-        </DialogHeader>
+      <DialogContent className="max-w-[95vw] max-h-[95vh] w-[800px] md:h-[900px] lg:h-[900px] h-[520px] bg-none backdrop-blur-xl rounded-lg ">
+        <a
+          className=" w-8 h-fit text-black absolute inset-2 hover:text-gray-500"
+          href="/resume.png"
+          download="/resume.png"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="currentColor"
+            className="size-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3"
+            />
+          </svg>
+        </a>
+
+        <div className="w-full h-full overflow-y-auto">
+          <Image
+            src="/resume.png"
+            alt="resume"
+            width={800}
+            height={1131}
+            className="w-full h-auto"
+          />
+        </div>
       </DialogContent>
     </Dialog>
   );

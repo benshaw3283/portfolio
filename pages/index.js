@@ -7,7 +7,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Messengerstats from "../components/messengerstats";
-import ParticlesComponent from "../components/ParticlesComponent"; 
+import ParticlesComponent from "../components/ParticlesComponent";
 import { motion } from "framer-motion";
 
 import { useInView } from "react-intersection-observer";
@@ -41,7 +41,7 @@ export default function Home() {
 
       <div className="relative min-h-screen bg-black w-full ">
         <div className="fixed inset-0">
-          <ParticlesComponent /> 
+          <ParticlesComponent />
         </div>
 
         <div className="relative z-10">
@@ -116,7 +116,9 @@ export default function Home() {
               >
                 en
               </motion.p>
-              <p className="text-white flex text-7xl z-10 pl-4 lg:text-9xl">S</p>
+              <p className="text-white flex text-7xl z-10 pl-4 lg:text-9xl">
+                S
+              </p>
               <motion.p
                 initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
                 animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
@@ -138,13 +140,13 @@ export default function Home() {
               <br></br>
             </div>
             <div className="order-4 place-self-center flex pb-6 z-10">
-              <h3 className="cursor-none text-2xl border-b border-purple-500  p-2 rounded-md text-white font-Chillax font-bold">
+              <h3 className=" text-2xl border-b border-purple-500  p-2 rounded-md text-white font-Chillax font-bold">
                 PROJECTS
               </h3>
             </div>
             <div className="order-5 place-self-center flex ">
               <Slider {...settings} className="w-[300px] lg:w-[800px]">
-              <Extension />
+                <Extension />
                 <Messengerstats />
               </Slider>
             </div>
@@ -186,7 +188,11 @@ export default function Home() {
                         width="25"
                         height="25"
                       >
-                        <path class="st0" fill="#007acc" d="M0 200V0h400v400H0" />
+                        <path
+                          class="st0"
+                          fill="#007acc"
+                          d="M0 200V0h400v400H0"
+                        />
                         <path
                           class="st1"
                           fill="#fff"
@@ -249,14 +255,13 @@ export default function Home() {
                     </li>
                   </ul>
                   <ul className="pl-6 font-semibold text-lg">
-                  <li>ReactJS</li>
-                  <li>Typescript</li>
-                  <li>TailwindCSS</li>
-                  <li>MongoDB</li>
-                  <li>NextJS</li>
-                </ul>
+                    <li>ReactJS</li>
+                    <li>Typescript</li>
+                    <li>TailwindCSS</li>
+                    <li>MongoDB</li>
+                    <li>NextJS</li>
+                  </ul>
                 </div>
-                
               </motion.div>
             </div>
           </div>
