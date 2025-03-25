@@ -9,7 +9,7 @@ import "slick-carousel/slick/slick-theme.css";
 import Messengerstats from "../components/messengerstats";
 import ParticlesComponent from "../components/ParticlesComponent";
 import { motion } from "framer-motion";
-
+import Head from "next/head";
 import { useInView } from "react-intersection-observer";
 import Resume from "../components/Resume";
 
@@ -37,9 +37,15 @@ export default function Home() {
 
   return (
     <div>
-      <title>Ben Shaw</title>
+      <Head>
+        <title>Ben Shaw</title>
+        <meta
+          name="description"
+          content="Portfolio of Ben Shaw, Front-End Developer based in Melbourne, Australia"
+        />
+      </Head>
 
-      <div className="relative min-h-screen bg-black w-full ">
+      <main className="relative min-h-screen bg-black w-full" role="main">
         <div className="fixed inset-0">
           <ParticlesComponent />
         </div>
@@ -47,11 +53,18 @@ export default function Home() {
         <div className="relative z-10">
           <div className="absolute scale-90 pl-2 pt-2 lg:invisible cursor-pointer ">
             <Image
-              alt="githubphone"
+              alt="GitHub Profile Link"
               src={githubPhone}
               onClick={() =>
                 window.open("https://github.com/benshaw3283", "_blank")
               }
+              role="link"
+              tabIndex={0}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  window.open("https://github.com/benshaw3283", "_blank");
+                }
+              }}
             />
           </div>
 
@@ -62,7 +75,11 @@ export default function Home() {
             <Resume />
           </div>
 
-          <div className=" absolute top-1 lg:right-4 right-2 justify-end place-items-center flex">
+          <div
+            className="absolute top-1 lg:right-4 right-2 justify-end place-items-center flex"
+            role="complementary"
+            aria-label="Location Information"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
@@ -72,6 +89,8 @@ export default function Home() {
               <path
                 fill="#f05542"
                 d="M8 1C5.239 1 3 3.357 3 6.264S8 15 8 15s5-5.829 5-8.736C13 3.357 10.761 1 8 1zm0 2.925a1.667 1.755 0 0 1 1.667 1.754A1.667 1.755 0 0 1 8 7.434a1.667 1.755 0 0 1-1.667-1.755A1.667 1.755 0 0 1 8 3.925z"
+                role="img"
+                aria-label="Location Pin Icon"
               ></path>
             </svg>
             <p className="pl-2 font-Switzer lg:text-base text-sm dark:text-white text-white">
@@ -81,12 +100,26 @@ export default function Home() {
           <div className="absolute lg:top-2 top-40  place-self-start flex lg:flex-col ">
             <br></br>
             <div
-              className="flex order-1 pl-4 pb-2 cursor-pointer lg:visible invisible "
+              className="flex order-1 pl-4 pb-2 cursor-pointer lg:visible invisible"
               onClick={() =>
                 window.open("https://github.com/benshaw3283", "_blank")
               }
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") {
+                  window.open("https://github.com/benshaw3283", "_blank");
+                }
+              }}
+              role="link"
+              tabIndex={0}
+              aria-label="GitHub Profile"
             >
-              <svg width="98" height="96" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="98"
+                height="96"
+                xmlns="http://www.w3.org/2000/svg"
+                role="img"
+                aria-label="GitHub Logo"
+              >
                 <path
                   fillRule="evenodd"
                   clipRule="evenodd"
@@ -104,35 +137,47 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col ">
-            <div className=" order-1 flex justify-center items-baseline mt-20 flex-row font-Chillax ">
-              <p className="text-white z-10 font-Chillax text-7xl lg:text-9xl">
-                B
-              </p>
-              <motion.p
-                initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
-                animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="text-white z-10 text-7xl lg:text-9xl"
+            <div className="order-1 flex justify-center items-baseline mt-20 flex-row font-Chillax">
+              <h1
+                className="text-white z-10 font-Chillax text-7xl lg:text-9xl flex items-baseline"
+                aria-label="Ben Shaw"
               >
-                en
-              </motion.p>
-              <p className="text-white flex text-7xl z-10 pl-4 lg:text-9xl">
-                S
-              </p>
-              <motion.p
-                initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
-                animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
-                transition={{ duration: 1 }}
-                className="text-white z-10 text-7xl lg:text-9xl"
-              >
-                haw
-              </motion.p>
+                <span aria-hidden="true">B</span>
+                <span className="sr-only">Ben Shaw</span>
+                <motion.span
+                  initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+                  animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  className="text-white z-10 text-7xl lg:text-9xl"
+                  aria-hidden="true"
+                >
+                  en
+                </motion.span>
+                <span
+                  className="text-white flex text-7xl z-10 pl-4 lg:text-9xl"
+                  aria-hidden="true"
+                >
+                  S
+                </span>
+                <motion.span
+                  initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
+                  animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
+                  transition={{ duration: 1 }}
+                  className="text-white z-10 text-7xl lg:text-9xl"
+                  aria-hidden="true"
+                >
+                  haw
+                </motion.span>
+              </h1>
             </div>
 
             <div className="order-2 place-self-center flex z-10 pt-4">
-              <h2 className=" lg:text-3xl text-xl font-light font-Chillax dark:text-white text-white">
+              <p
+                className="lg:text-3xl text-xl font-light font-Chillax dark:text-white text-white"
+                role="doc-subtitle"
+              >
                 Front-End Developer
-              </h2>
+              </p>
             </div>
             <div className="order-3">
               <br></br>
@@ -140,39 +185,58 @@ export default function Home() {
               <br></br>
             </div>
             <div className="order-4 place-self-center flex pb-6 z-10">
-              <h3 className=" text-2xl border-b border-purple-500  p-2 rounded-md text-white font-Chillax font-bold">
+              <h2
+                className="text-2xl border-b border-purple-500 p-2 rounded-md text-white font-Chillax font-bold"
+                id="projects-section"
+              >
                 PROJECTS
-              </h3>
+              </h2>
             </div>
-            <div className="order-5 place-self-center flex ">
-              <Slider {...settings} className="w-[300px] lg:w-[800px]">
-                <Extension />
-                <Messengerstats />
-              </Slider>
+            <div className="order-5 place-self-center flex">
+              <div role="region" aria-label="Projects Showcase">
+                <Slider
+                  {...settings}
+                  className="w-[300px] lg:w-[800px]"
+                  aria-label="Project Slideshow"
+                >
+                  <div>
+                    <Extension />
+                  </div>
+                  <div>
+                    <Messengerstats />
+                  </div>
+                </Slider>
+              </div>
             </div>
             <div className="order-6">
               <br></br>
               <br></br>
             </div>
             <div ref={ref} className="order-7 justify-center flex w-full ">
-              <motion.div
+              <motion.section
                 animate={inView ? "in" : "out"}
                 variants={variants}
                 transition={{ duration: 0.4 }}
-                className=" w-[94%] h-fit flex flex-col text-white  p-4 rounded-lg bg-black z-10 opacity-80  shadow-purple-500  shadow-inner mb-10"
+                className=" w-[94%] h-fit flex flex-col text-white p-4 rounded-lg bg-black z-10 opacity-90 shadow-purple-500 shadow-inner mb-10"
+                role="region"
+                aria-label="About Me Section"
               >
-                <p className="text-3xl font-bold pb-4 font-Chillax">About me</p>
-                <p className="flex pb-6  lg:text-xl  font-Switzer">
+                <h2 className="text-3xl font-bold pb-4 font-Chillax">
+                  About me
+                </h2>
+                <p className="flex pb-6 lg:text-xl font-Switzer leading-relaxed">
                   {`I'm a front-end developer capable of creating responsive, user-friendly and modern websites through my knowledge of :`}
                 </p>
                 <div className="flex flex-row">
-                  <ul>
+                  <ul className="list-none space-y-2" aria-label="Technologies">
                     <li>
                       <svg
                         height="25"
                         viewBox="105.7 18 690.6 536.9"
                         width="25"
                         xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="React Logo"
                       >
                         <g fill="#61dafb">
                           <path d="m666.3 296.5c0-32.5-40.7-63.3-103.1-82.4 14.4-63.6 8-114.2-20.2-130.4-6.5-3.8-14.1-5.6-22.4-5.6v22.3c4.6 0 8.3.9 11.4 2.6 13.6 7.8 19.5 37.5 14.9 75.7-1.1 9.4-2.9 19.3-5.1 29.4-19.6-4.8-41-8.5-63.5-10.9-13.5-18.5-27.5-35.3-41.6-50 32.6-30.3 63.2-46.9 84-46.9v-22.3c-27.5 0-63.5 19.6-99.9 53.6-36.4-33.8-72.4-53.2-99.9-53.2v22.3c20.7 0 51.4 16.5 84 46.6-14 14.7-28 31.4-41.3 49.9-22.6 2.4-44 6.1-63.6 11-2.3-10-4-19.7-5.2-29-4.7-38.2 1.1-67.9 14.6-75.8 3-1.8 6.9-2.6 11.5-2.6v-22.3c-8.4 0-16 1.8-22.6 5.6-28.1 16.2-34.4 66.7-19.9 130.1-62.2 19.2-102.7 49.9-102.7 82.3 0 32.5 40.7 63.3 103.1 82.4-14.4 63.6-8 114.2 20.2 130.4 6.5 3.8 14.1 5.6 22.5 5.6 27.5 0 63.5-19.6 99.9-53.6 36.4 33.8 72.4 53.2 99.9 53.2 8.4 0 16-1.8 22.6-5.6 28.1-16.2 34.4-66.7 19.9-130.1 62-19.1 102.5-49.9 102.5-82.3zm-130.2-66.7c-3.7 12.9-8.3 26.2-13.5 39.5-4.1-8-8.4-16-13.1-24-4.6-8-9.5-15.8-14.4-23.4 14.2 2.1 27.9 4.7 41 7.9zm-45.8 106.5c-7.8 13.5-15.8 26.3-24.1 38.2-14.9 1.3-30 2-45.2 2-15.1 0-30.2-.7-45-1.9-8.3-11.9-16.4-24.6-24.2-38-7.6-13.1-14.5-26.4-20.8-39.8 6.2-13.4 13.2-26.8 20.7-39.9 7.8-13.5 15.8-26.3 24.1-38.2 14.9-1.3 30-2 45.2-2 15.1 0 30.2.7 45 1.9 8.3 11.9 16.4 24.6 24.2 38 7.6 13.1 14.5 26.4 20.8 39.8-6.3 13.4-13.2 26.8-20.7 39.9zm32.3-13c5.4 13.4 10 26.8 13.8 39.8-13.1 3.2-26.9 5.9-41.2 8 4.9-7.7 9.8-15.6 14.4-23.7 4.6-8 8.9-16.1 13-24.1zm-101.4 106.7c-9.3-9.6-18.6-20.3-27.8-32 9 .4 18.2.7 27.5.7 9.4 0 18.7-.2 27.8-.7-9 11.7-18.3 22.4-27.5 32zm-74.4-58.9c-14.2-2.1-27.9-4.7-41-7.9 3.7-12.9 8.3-26.2 13.5-39.5 4.1 8 8.4 16 13.1 24s9.5 15.8 14.4 23.4zm73.9-208.1c9.3 9.6 18.6 20.3 27.8 32-9-.4-18.2-.7-27.5-.7-9.4 0-18.7.2-27.8.7 9-11.7 18.3-22.4 27.5-32zm-74 58.9c-4.9 7.7-9.8 15.6-14.4 23.7-4.6 8-8.9 16-13 24-5.4-13.4-10-26.8-13.8-39.8 13.1-3.1 26.9-5.8 41.2-7.9zm-90.5 125.2c-35.4-15.1-58.3-34.9-58.3-50.6s22.9-35.6 58.3-50.6c8.6-3.7 18-7 27.7-10.1 5.7 19.6 13.2 40 22.5 60.9-9.2 20.8-16.6 41.1-22.2 60.6-9.9-3.1-19.3-6.5-28-10.2zm53.8 142.9c-13.6-7.8-19.5-37.5-14.9-75.7 1.1-9.4 2.9-19.3 5.1-29.4 19.6 4.8 41 8.5 63.5 10.9 13.5 18.5 27.5 35.3 41.6 50-32.6 30.3-63.2 46.9-84 46.9-4.5-.1-8.3-1-11.3-2.7zm237.2-76.2c4.7 38.2-1.1 67.9-14.6 75.8-3 1.8-6.9 2.6-11.5 2.6-20.7 0-51.4-16.5-84-46.6 14-14.7 28-31.4 41.3-49.9 22.6-2.4 44-6.1 63.6-11 2.3 10.1 4.1 19.8 5.2 29.1zm38.5-66.7c-8.6 3.7-18 7-27.7 10.1-5.7-19.6-13.2-40-22.5-60.9 9.2-20.8 16.6-41.1 22.2-60.6 9.9 3.1 19.3 6.5 28.1 10.2 35.4 15.1 58.3 34.9 58.3 50.6-.1 15.7-23 35.6-58.4 50.6z" />
@@ -260,13 +324,14 @@ export default function Home() {
                     <li>TailwindCSS</li>
                     <li>MongoDB</li>
                     <li>NextJS</li>
+                    <li>Framer Motion</li>
                   </ul>
                 </div>
-              </motion.div>
+              </motion.section>
             </div>
           </div>
         </div>
-      </div>
+      </main>
     </div>
   );
 }
