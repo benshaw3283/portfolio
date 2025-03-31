@@ -5,9 +5,9 @@ import styles from "../styles/tooltip.module.css";
 
 const GmailTooltip = () => {
   return (
-    <Tooltip.Provider>
+    <Tooltip.Provider delayDuration={100}>
       <Tooltip.Root>
-        <Tooltip.Trigger asChild>
+        <Tooltip.Trigger asChild >
           <button>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -43,6 +43,7 @@ const GmailTooltip = () => {
             className={styles.TooltipContent}
             sideOffset={5}
             side="right"
+            
           >
             benshaw.dev@gmail.com
             <Tooltip.Arrow className={styles.TooltipArrow} />

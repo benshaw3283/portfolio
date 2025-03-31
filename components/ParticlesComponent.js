@@ -4,7 +4,7 @@ import { loadSlim } from "@tsparticles/slim";
 import { createNoise3D } from "simplex-noise";
 
 let noiseZ = 0;
-let size = 15; // Smaller size for more dense field
+let size = 15; 
 let columns;
 let rows;
 let field;
@@ -34,17 +34,17 @@ const ParticlesComponent = () => {
   const calculateField = useCallback(() => {
     for (let x = 0; x < columns; x++) {
       for (let y = 0; y < rows; y++) {
-        let angle = noise(x / 20, y / 20, noiseZ) * Math.PI * 2; // Increased frequency
+        let angle = noise(x / 20, y / 20, noiseZ) * Math.PI * 2; 
         let length = noise(x / 40 + 40000, y / 40 + 40000, noiseZ);
         fieldRef.current[x][y][0] = angle;
-        fieldRef.current[x][y][1] = Math.abs(length); // Ensure positive length
+        fieldRef.current[x][y][1] = Math.abs(length);
       }
     }
   }, []);
 
   const drawField = useCallback((ctx, width, height) => {
     ctx.clearRect(0, 0, width, height);
-    ctx.strokeStyle = "rgba(255, 255, 255, 0.15)"; // Increased opacity
+    ctx.strokeStyle = "rgba(255, 255, 255, 0.50)"; 
     ctx.lineWidth = 1;
     
     for (let x = 0; x < columns; x++) {
@@ -56,7 +56,7 @@ const ParticlesComponent = () => {
         ctx.rotate(angle);
         ctx.beginPath();
         ctx.moveTo(0, 0);
-        ctx.lineTo(0, sizeRef.current * length * 0.75); // Scale down the line length
+        ctx.lineTo(0, sizeRef.current * length * 0.75); 
         ctx.stroke();
         ctx.restore();
       }
@@ -66,11 +66,11 @@ const ParticlesComponent = () => {
   const animate = useCallback(() => {
     if (!canvasRef.current) return;
     const canvas = canvasRef.current;
-    const ctx = canvas.getContext("2d", { alpha: false }); // Disable alpha for better performance
+    const ctx = canvas.getContext("2d", { alpha: false }); 
     
     calculateField();
     drawField(ctx, canvas.width, canvas.height);
-    noiseZ += 0.002; // Slower animation
+    noiseZ += 0.002; 
     
     animationFrameId = requestAnimationFrame(animate);
   }, [calculateField, drawField]);
@@ -161,7 +161,7 @@ const ParticlesComponent = () => {
             const angle = currentField[px][py][0];
             const length = currentField[px][py][1];
             
-            // Convert angle to velocity components
+            
             const speed = p.options.move.speed;
             const vx = Math.cos(angle) * length * speed;
             const vy = Math.sin(angle) * length * speed;
@@ -198,17 +198,17 @@ const ParticlesComponent = () => {
     fpsLimit: 60,
     particles: {
       number: {
-        value: 400,
+        value: 300,
         density: {
           enable: true,
           value_area: 800
         }
       },
       color: {
-        value: '#640be0'
+        value: ['#FFFFFF', '#640be0']
       },
       shape: {
-        type: "circle",
+        type: "triangle",
         stroke: {
           width: 0
         }
@@ -217,7 +217,7 @@ const ParticlesComponent = () => {
         value: 1
       },
       size: {
-        value: 1
+        value: 1.5
       },
       move: {
         enable: true,

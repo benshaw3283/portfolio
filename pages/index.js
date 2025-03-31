@@ -100,7 +100,7 @@ export default function Home() {
           <div className="absolute lg:top-2 top-40  place-self-start flex lg:flex-col ">
             <br></br>
             <div
-              className="flex order-1 pl-4 pb-2 cursor-pointer lg:visible invisible"
+              className="hover:scale-105 flex order-1 pl-4 pb-2 cursor-pointer lg:visible invisible"
               onClick={() =>
                 window.open("https://github.com/benshaw3283", "_blank")
               }
@@ -298,6 +298,9 @@ export default function Home() {
                         />
                       </svg>
                     </li>
+                    <li>
+                      <Image src='/next.jpeg' alt='NextJS ' width={30} height={20}/>
+                    </li>
 
                     <li className="pl-1">
                       <svg
@@ -320,11 +323,11 @@ export default function Home() {
                   </ul>
                   <ul className="pl-6 font-semibold text-lg">
                     <li>ReactJS</li>
-                    <li>Typescript</li>
-                    <li>TailwindCSS</li>
-                    <li>MongoDB</li>
-                    <li>NextJS</li>
-                    <li>Framer Motion</li>
+                    <li className="pt-1">Typescript</li>
+                    <li className="pt-2">TailwindCSS</li>
+                    <li className="pt-2">MongoDB</li>
+                    <li className="pt-3">NextJS</li>
+                    <li className="pt-2">Framer Motion</li>
                   </ul>
                 </div>
               </motion.section>
