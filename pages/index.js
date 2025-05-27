@@ -93,9 +93,15 @@ export default function Home() {
                 aria-label="Location Pin Icon"
               ></path>
             </svg>
-            <p className="pl-2 font-Switzer lg:text-base text-sm dark:text-white text-white">
-              Melbourne, Australia
-            </p>
+            <div className="flex items-baseline ">
+              <p className="pl-2 font-Switzer lg:text-base text-sm font-medium  dark:text-white text-white">
+                Melbourne
+              </p>
+              <div className="h-1 w-1 -translate-y-[2px] bg-white rounded-full ml-2"></div>
+              <p className="pl-2 font-Switzer lg:text-base text-sm font-medium  dark:text-white text-white">
+                Australia
+              </p>
+            </div>
           </div>
           <div className="absolute lg:top-2 top-40  place-self-start flex lg:flex-col ">
             <br></br>
@@ -186,7 +192,7 @@ export default function Home() {
             </div>
             <div className="order-4 place-self-center flex pb-6 z-10">
               <h2
-                className="text-2xl border-b border-purple-500 p-2 rounded-md text-white font-Chillax font-bold"
+                className="text-2xl p-4 text-white font-Chillax font-bold bg-black tracking-wider border-0 border-b animate-[border-pulse_4s_ease-in-out_infinite]"
                 id="projects-section"
               >
                 PROJECTS
