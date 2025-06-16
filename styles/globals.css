@@ -18,9 +18,9 @@
 
 
 @keyframes border-pulse {
-  0% { border-image: linear-gradient(to right, transparent, rgb(168, 85, 247, 0.2), transparent) 1; }
-  50% { border-image: linear-gradient(to right, transparent, rgb(168, 85, 247, 0.4), transparent) 1; }
-  100% { border-image: linear-gradient(to right, transparent, rgb(168, 85, 247, 0.2), transparent) 1; }
+  0% { border-image: linear-gradient(to right, transparent, rgb(168, 85, 247, 0.4), transparent) 1; }
+  50% { border-image: linear-gradient(to right, transparent, rgb(168, 85, 247, 0.8), transparent) 1; }
+  100% { border-image: linear-gradient(to right, transparent, rgb(168, 85, 247, 0.4), transparent) 1; }
 }
 
 /* Custom Scrollbar */

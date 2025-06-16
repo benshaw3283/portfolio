@@ -1,3 +1,15 @@
+@media (max-width: 740px) {
+  .TooltipContent {
+    display: none;
+   opacity: 0;
+  
+  }
+  .TooltipArrow {
+    display: none;
+   opacity: 0;
+  }
+}
+
 .TooltipContent {
   border-radius: 4px;
   padding: 10px 15px;
@@ -30,6 +42,9 @@
 
 .TooltipArrow {
   fill: white;
+  display: block;
+  margin-top: -1px;
+  transform: rotate(180deg);
 }
 
 .IconButton {

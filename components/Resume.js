@@ -8,10 +8,16 @@ import {
   DialogTrigger,
 } from "../components/ui/dialog";
 import Image from "next/image";
+import * as Tooltip from "@radix-ui/react-tooltip";
+
+import styles from "../styles/tooltip.module.css";
 
 const Resume = () => {
   return (
+    <Tooltip.Provider delayDuration={140}>
+          <Tooltip.Root>
     <Dialog>
+      <Tooltip.TooltipTrigger asChild>
       <DialogTrigger className="lg:mb-2 w-10 lg:w-28 hover:scale-105">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -27,9 +33,25 @@ const Resume = () => {
           />
         </svg>
       </DialogTrigger>
+      </Tooltip.TooltipTrigger>
+      <Tooltip.Portal>
+          <Tooltip.Content
+            className='invisible md:visible rounded-sm -translate-y-6 px-4 py-1 text-[18px] leading-8 text-black bg-white shadow-[0_10px_38px_-10px_rgba(22,23,24,0.35),0_10px_20px_-15px_rgba(22,23,24,0.2)] select-none duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] will-change-[transform,opacity] font-bold z-100'
+            sideOffset={5}
+            side="right"
+            
+          >
+           Resumé
+            <Tooltip.Arrow asChild>
+              <svg width="16" height="8" viewBox="0 0 16 8" className={styles.TooltipArrow}>
+                <path d="M0 8 A8 8 0 0 1 16 8 Z" />
+              </svg>
+            </Tooltip.Arrow>
+          </Tooltip.Content>
+        </Tooltip.Portal>
       <DialogContent className="max-w-[95vw] max-h-[95vh] w-[800px] md:h-[900px] lg:h-[900px] h-[520px] bg-none backdrop-blur-xl rounded-lg ">
         <a
-          className=" w-8 h-fit text-black absolute inset-2 hover:text-gray-500"
+          className=" w-8 h-fit text-black absolute inset-2 "
           href="/resume.png"
           download="/resume.png"
         >
@@ -60,6 +82,8 @@ const Resume = () => {
         </div>
       </DialogContent>
     </Dialog>
+    </Tooltip.Root>
+    </Tooltip.Provider>
   );
 };
 

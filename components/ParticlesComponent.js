@@ -1,6 +1,4 @@
 import { useEffect, useState, useCallback, useRef } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
 import { createNoise3D } from "simplex-noise";
 
 let noiseZ = 0;
@@ -12,7 +10,6 @@ let noise;
 let animationFrameId;
 
 const ParticlesComponent = () => {
-  const [init, setInit] = useState(false);
   const [dimensions, setDimensions] = useState({ width: 0, height: 0 });
   const canvasRef = useRef(null);
   const fieldRef = useRef(field);
@@ -111,19 +108,7 @@ const ParticlesComponent = () => {
     window.addEventListener('resize', handleResize);
     updateFieldRef();
     updateSizeRef();
-    
-    const initEngine = async () => {
-      try {
-        await initParticlesEngine(async (engine) => {
-          await loadSlim(engine);
-          console.log("Particles engine initialized");
-        });
-        setInit(true);
-      } catch (error) {
-        console.error("Error initializing particles:", error);
-      }
-    };
-    initEngine();
+    animate();
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -131,135 +116,14 @@ const ParticlesComponent = () => {
         cancelAnimationFrame(animationFrameId);
       }
     };
-  }, [handleResize, updateFieldRef, updateSizeRef]);
+  }, [handleResize, updateFieldRef, updateSizeRef, animate]);
 
-  useEffect(() => {
-    if (init && dimensions.width > 0 && dimensions.height > 0) {
-      animate();
-      updateFieldRef();
-    }
-  }, [init, dimensions, animate, updateFieldRef]);
 
-  const particlesLoaded = useCallback(async (container) => {
-    if (container) {
-      console.log("Particles container loaded");
-      
-      // Update particle velocities based on noise field
-      const updateParticles = () => {
-        if (!container.particles) return;
-        
-        const particles = container.particles.filter(() => true);
-        if (!particles.length) return;
-        
-        particles.forEach(p => {
-          const pos = p.getPosition();
-          const px = Math.max(Math.floor(pos.x / sizeRef.current), 0);
-          const py = Math.max(Math.floor(pos.y / sizeRef.current), 0);
 
-          const currentField = fieldRef.current;
-          if (currentField && currentField[px] && currentField[px][py]) {
-            const angle = currentField[px][py][0];
-            const length = currentField[px][py][1];
-            
-            
-            const speed = p.options.move.speed;
-            const vx = Math.cos(angle) * length * speed;
-            const vy = Math.sin(angle) * length * speed;
-            
-            p.velocity.x = vx;
-            p.velocity.y = vy;
-          }
-        });
-      };
 
-      // Start update loop
-      let animationFrame;
-      const update = () => {
-        updateParticles();
-        animationFrame = requestAnimationFrame(update);
-      };
-      update();
-
-      // Cleanup animation frame on unmount
-      return () => {
-        if (animationFrame) {
-          cancelAnimationFrame(animationFrame);
-        }
-      };
-    }
-  }, []);
-
-  const options = {
-    background: {
-      color: {
-        value: "transparent"
-      }
-    },
-    fpsLimit: 60,
-    particles: {
-      number: {
-        value: 300,
-        density: {
-          enable: true,
-          value_area: 800
-        }
-      },
-      color: {
-        value: ['#FFFFFF', '#640be0']
-      },
-      shape: {
-        type: "triangle",
-        stroke: {
-          width: 0
-        }
-      },
-      opacity: {
-        value: 1
-      },
-      size: {
-        value: 1.5
-      },
-      move: {
-        enable: true,
-        speed: 2,
-        direction: "none",
-        random: false,
-        straight: false,
-        outMode: "out",
-        bounce: false,
-        attract: {
-          enable: false
-        }
-      }
-    },
-    interactivity: {
-      detect_on: "canvas",
-      events: {
-        resize: true
-      }
-    },
-    detectRetina: true,
-    pauseOnBlur: true
-  };
 
   return (
     <div className="relative w-full h-screen bg-black">
-      {init && (
-        <Particles
-          id="tsparticles"
-          options={options}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            zIndex: 2,
-            pointerEvents: 'none'
-          }}
-          particlesLoaded={particlesLoaded}
-        />
-      )}
       <canvas 
         ref={canvasRef}
         style={{
@@ -268,7 +132,6 @@ const ParticlesComponent = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          zIndex: 1,
           opacity: 0.5
         }}
       />

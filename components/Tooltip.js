@@ -46,7 +46,11 @@ const GmailTooltip = () => {
             
           >
             benshaw.dev@gmail.com
-            <Tooltip.Arrow className={styles.TooltipArrow} />
+            <Tooltip.Arrow asChild>
+              <svg width="16" height="8" viewBox="0 0 16 8" className={styles.TooltipArrow}>
+                <path d="M0 8 A8 8 0 0 1 16 8 Z" />
+              </svg>
+            </Tooltip.Arrow>
           </Tooltip.Content>
         </Tooltip.Portal>
       </Tooltip.Root>
