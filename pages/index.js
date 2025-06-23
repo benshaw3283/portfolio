@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import Head from "next/head";
 import { useInView } from "react-intersection-observer";
 import Resume from "../components/Resume";
+import Minutia from "../components/Minutia";
 
 export default function Home() {
   const { ref, inView } = useInView({
@@ -218,6 +219,9 @@ export default function Home() {
               <br></br>
               <br></br>
             </div>
+            <div className="order-6">
+              <Minutia />
+            </div>
             <div ref={ref} className="order-7 justify-center flex w-full ">
               <motion.section
                 animate={inView ? "in" : "out"}
@@ -305,7 +309,12 @@ export default function Home() {
                       </svg>
                     </li>
                     <li>
-                      <Image src='/next.jpeg' alt='NextJS ' width={30} height={20}/>
+                      <Image
+                        src="/next.jpeg"
+                        alt="NextJS "
+                        width={30}
+                        height={20}
+                      />
                     </li>
 
                     <li className="pl-1">
