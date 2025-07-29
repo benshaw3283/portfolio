@@ -18,7 +18,7 @@ const Extension = () => {
         
    
        <div>
-        <Image src='/featured.png' alt='featured' className='rounded-lg' width={100} height={50}/>
+        <Image src='/featured.PNG' alt='featured' className='rounded-lg' width={100} height={50}/>
        </div>
        <div className='flex-row flex items-center gap-1'>
         <svg xmlns="http://www.w3.org/2000/svg" fill="gold" viewBox="0 0 24 24" strokeWidth={1.5} stroke="gold" className="h-4 w-4">
