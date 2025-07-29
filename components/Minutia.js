@@ -5,7 +5,7 @@ const Minutia = () => {
     <div className=" bg-black opacity-90 shadow-purple-500 shadow-inner p-6 rounded-lg w-[94%] mx-auto my-8">
       <div className="flex items-center justify-center space-x-2 mb-6">
         <span className="text-4xl">🏗️</span>
-        <h2 className="text-2xl font-bold text-white">Under Construction</h2>
+        <h2 className="text-2xl font-bold text-white text-center">Under Construction</h2>
         <span className="text-4xl">👷</span>
       </div>
 
