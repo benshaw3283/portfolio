@@ -18,6 +18,9 @@ export default function Home() {
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
+  const { ref:minutiaRef, inView:minutiaInView } = useInView({
+    threshold: 0.3,
+  });
   const settings = {
     dots: true,
     infinite: true,
@@ -35,6 +38,7 @@ export default function Home() {
     in: { opacity: 1 },
     out: { opacity: 0 },
   };
+
 
   return (
     <div>
@@ -219,8 +223,8 @@ export default function Home() {
               <br></br>
               <br></br>
             </div>
-            <div className="order-6">
-              <Minutia />
+            <div ref={minutiaRef} className="order-6">
+            <motion.section animate={minutiaInView ? "in" : "out"} variants={variants} transition={{ duration: 0.4 }}><Minutia /></motion.section>
             </div>
             <div ref={ref} className="order-7 justify-center flex w-full ">
               <motion.section
