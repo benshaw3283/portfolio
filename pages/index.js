@@ -13,8 +13,11 @@ import Head from "next/head";
 import { useInView } from "react-intersection-observer";
 import Resume from "../components/Resume";
 import Minutia from "../components/Minutia";
+import Theme from '../components/Theme'
+import { useStore } from '../components/Theme'
 
 export default function Home() {
+  const { theme } = useStore()
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
@@ -29,9 +32,10 @@ export default function Home() {
     slidesToScroll: 1,
     centerMode: false,
     swipe: true,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
     arrows: true,
+
   };
 
   const variants = {
@@ -54,6 +58,8 @@ export default function Home() {
         <div className="fixed inset-0">
           <ParticlesComponent />
         </div>
+        
+        <Theme />
 
         <div className="relative z-10">
           <div className="absolute scale-90 pl-2 pt-2 lg:invisible cursor-pointer ">
@@ -197,7 +203,7 @@ export default function Home() {
             </div>
             <div className="order-4 place-self-center flex pb-6 z-10">
               <h2
-                className="text-2xl p-4 text-white font-Chillax font-bold bg-black tracking-wider border-0 border-b animate-[border-pulse_4s_ease-in-out_infinite]"
+                className={`text-2xl p-4 text-white font-Chillax font-bold bg-black tracking-wider border-0 border-b ${theme === 'red-500' ? 'animate-[border-pulse-red_4s_ease-in-out_infinite]' : theme === 'blue-500' ? 'animate-[border-pulse-blue_4s_ease-in-out_infinite]' : theme === 'green-500' ? 'animate-[border-pulse-green_4s_ease-in-out_infinite]' : theme === 'yellow-500' ? 'animate-[border-pulse-yellow_4s_ease-in-out_infinite]' : 'animate-[border-pulse-purple_4s_ease-in-out_infinite]'}`}
                 id="projects-section"
               >
                 PROJECTS
@@ -207,13 +213,13 @@ export default function Home() {
               <div role="region" aria-label="Projects Showcase">
                 <Slider
                   {...settings}
-                  className="w-[300px] lg:w-[800px]"
+                  className="w-[300px] lg:w-[800px] "
                   aria-label="Project Slideshow"
                 >
-                  <div>
+                  <div className="lg:px-1">
                     <Extension />
                   </div>
-                  <div>
+                  <div className="">
                     <Messengerstats />
                   </div>
                 </Slider>
@@ -231,7 +237,7 @@ export default function Home() {
                 animate={inView ? "in" : "out"}
                 variants={variants}
                 transition={{ duration: 0.4 }}
-                className=" w-[94%] h-fit flex flex-col text-white p-4 rounded-lg bg-black z-10 opacity-90 shadow-purple-500 shadow-inner mb-10"
+                className={`w-[94%] h-fit flex flex-col text-white p-4 rounded-lg bg-black z-10 opacity-90 ${theme === 'red-500' ? 'shadow-red-500' : theme === 'blue-500' ? 'shadow-blue-500' : theme === 'green-500' ? 'shadow-green-500' : theme === 'yellow-500' ? 'shadow-yellow-500' : 'shadow-purple-500'} shadow-inner mb-10`}
                 role="region"
                 aria-label="About Me Section"
               >

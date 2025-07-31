@@ -1,8 +1,10 @@
 import React from "react";
+import { useStore } from './Theme'
 
 const Minutia = () => {
+  const { theme } = useStore()
   return (
-    <div className=" bg-black opacity-90 shadow-purple-500 shadow-inner p-6 rounded-lg w-[94%] mx-auto my-8">
+    <div className={` bg-black opacity-90 ${theme === 'red-500' ? 'shadow-red-500' : theme === 'blue-500' ? 'shadow-blue-500' : theme === 'green-500' ? 'shadow-green-500' : theme === 'yellow-500' ? 'shadow-yellow-500' : 'shadow-purple-500'} shadow-inner p-6 rounded-lg w-[94%] mx-auto my-8`}>
       <div className="flex items-center justify-center space-x-2 mb-6">
         <span className="text-4xl">🏗️</span>
         <h2 className="text-2xl font-bold text-white text-center">Under Construction</h2>
@@ -11,7 +13,7 @@ const Minutia = () => {
 
       <div className="space-y-4 text-white">
         <p className="text-lg font-medium">
-          Building <strong className="text-purple-500">Minutia</strong>: Your
+          Building <strong className={`text-${theme}`}>Minutia</strong>: Your
           Personal AI-Powered Content Assistant
         </p>
 
@@ -54,7 +56,7 @@ const Minutia = () => {
           </a>
         </div>
 
-        <div className="bg-purple-500/50 p-4 rounded-md mt-4">
+        <div className={`${theme === 'red-500' ? 'bg-red-500/50' : theme === 'blue-500' ? 'bg-blue-500/50' : theme === 'green-500' ? 'bg-green-500/50' : theme === 'yellow-500' ? 'bg-yellow-500/50' : 'bg-purple-500/50'} p-4 rounded-md mt-4`}>
           <p className="text-sm italic">
             <span className="font-semibold">🛠️ Tech Stack:</span> Next.js,
             TypeScript, Supabase, PostgreSQL, OpenAI API, NextAuth, OneSignal
