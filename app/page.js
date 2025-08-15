@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Extension from "../components/Extension";
 import GmailTooltip from "../components/Tooltip";
@@ -13,16 +14,16 @@ import Head from "next/head";
 import { useInView } from "react-intersection-observer";
 import Resume from "../components/Resume";
 import Minutia from "../components/Minutia";
-import Theme from '../components/Theme'
-import { useStore } from '../components/Theme'
+import Theme from "../components/Theme";
+import { useStore } from "../components/Theme";
 import Contributions from "@/components/Contributions";
 
 export default function Home() {
-  const { theme } = useStore()
+  const { theme } = useStore();
   const { ref, inView } = useInView({
     threshold: 0.5,
   });
-  const { ref:minutiaRef, inView:minutiaInView } = useInView({
+  const { ref: minutiaRef, inView: minutiaInView } = useInView({
     threshold: 0.3,
   });
   const settings = {
@@ -36,14 +37,12 @@ export default function Home() {
     autoplay: false,
     autoplaySpeed: 5000,
     arrows: true,
-
   };
 
   const variants = {
     in: { opacity: 1 },
     out: { opacity: 0 },
   };
-
 
   return (
     <div>
@@ -59,7 +58,7 @@ export default function Home() {
         <div className="fixed inset-0">
           <ParticlesComponent />
         </div>
-        
+
         <Theme />
 
         <div className="relative z-10">
@@ -204,7 +203,17 @@ export default function Home() {
             </div>
             <div className="order-4 place-self-center flex pb-6 z-10">
               <h2
-                className={`text-2xl p-4 text-white font-Chillax font-bold bg-black tracking-wider border-0 border-b ${theme === 'red-500' ? 'animate-[border-pulse-red_4s_ease-in-out_infinite]' : theme === 'blue-500' ? 'animate-[border-pulse-blue_4s_ease-in-out_infinite]' : theme === 'green-500' ? 'animate-[border-pulse-green_4s_ease-in-out_infinite]' : theme === 'yellow-500' ? 'animate-[border-pulse-yellow_4s_ease-in-out_infinite]' : 'animate-[border-pulse-purple_4s_ease-in-out_infinite]'}`}
+                className={`text-2xl p-4 text-white font-Chillax font-bold bg-black tracking-wider border-0 border-b ${
+                  theme === "red-500"
+                    ? "animate-[border-pulse-red_4s_ease-in-out_infinite]"
+                    : theme === "blue-500"
+                    ? "animate-[border-pulse-blue_4s_ease-in-out_infinite]"
+                    : theme === "green-500"
+                    ? "animate-[border-pulse-green_4s_ease-in-out_infinite]"
+                    : theme === "yellow-500"
+                    ? "animate-[border-pulse-yellow_4s_ease-in-out_infinite]"
+                    : "animate-[border-pulse-purple_4s_ease-in-out_infinite]"
+                }`}
                 id="projects-section"
               >
                 PROJECTS
@@ -233,13 +242,23 @@ export default function Home() {
             <div className="order-7">
               <Contributions />
             </div>
-            
+
             <div ref={ref} className="order-8 justify-center flex w-full ">
               <motion.section
                 animate={inView ? "in" : "out"}
                 variants={variants}
                 transition={{ duration: 0.4 }}
-                className={`w-[94%] h-fit flex flex-col text-white p-4 rounded-lg bg-black z-10 opacity-90 ${theme === 'red-500' ? 'shadow-red-500' : theme === 'blue-500' ? 'shadow-blue-500' : theme === 'green-500' ? 'shadow-green-500' : theme === 'yellow-500' ? 'shadow-yellow-500' : 'shadow-purple-500'} shadow-inner mb-10`}
+                className={`w-[94%] h-fit flex flex-col text-white p-4 rounded-lg bg-black z-10 opacity-90 ${
+                  theme === "red-500"
+                    ? "shadow-red-500"
+                    : theme === "blue-500"
+                    ? "shadow-blue-500"
+                    : theme === "green-500"
+                    ? "shadow-green-500"
+                    : theme === "yellow-500"
+                    ? "shadow-yellow-500"
+                    : "shadow-purple-500"
+                } shadow-inner mb-10`}
                 role="region"
                 aria-label="About Me Section"
               >
@@ -360,7 +379,13 @@ export default function Home() {
               </motion.section>
             </div>
             <div ref={minutiaRef} className="order-9">
-            <motion.section animate={minutiaInView ? "in" : "out"} variants={variants} transition={{ duration: 0.4 }}><Minutia /></motion.section>
+              <motion.section
+                animate={minutiaInView ? "in" : "out"}
+                variants={variants}
+                transition={{ duration: 0.4 }}
+              >
+                <Minutia />
+              </motion.section>
             </div>
           </div>
         </div>

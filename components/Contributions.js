@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { graphql } from '@octokit/graphql';
 import { useStore } from '../components/Theme'
 
 const Contributions = () => {
@@ -11,78 +10,12 @@ const Contributions = () => {
   useEffect(() => {
     const fetchContributions = async () => {
       try {
-        const graphqlWithAuth = graphql.defaults({
-          headers: {
-            authorization: `Bearer ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
-          },
-        });
-
-        // Get skillcert PR via GraphQL
-        const { skillcertSearch } = await graphqlWithAuth(`
-          {
-            skillcertSearch: search(query: "repo:skillcert/skillcert-frontend author:benshaw3283 is:pr is:merged", type: ISSUE, first: 100) {
-              nodes {
-                ... on PullRequest {
-                  title
-                  url
-                  repository {
-                    name
-                    nameWithOwner
-                    url
-                    description
-                  }
-                  mergedAt
-                  additions
-                  deletions
-                  changedFiles
-                }
-              }
-            }
-          }
-        `);
-
-        // Get Base64-Pro PR via REST API
-        const base64Response = await fetch('https://api.github.com/repos/codinasion/Base64-Pro/pulls/2', {
-          headers: {
-            'Authorization': `Bearer ${process.env.NEXT_PUBLIC_GITHUB_ACCESS_TOKEN}`,
-            'Accept': 'application/vnd.github.v3+json'
-          }
-        });
-
-        const base64PR = await base64Response.json();
-        console.log('Raw Base64 PR data:', base64PR);
-
-        // Format Base64-Pro PR to match GraphQL structure
-        const formattedBase64PR = {
-          title: base64PR.title,
-          url: base64PR.html_url,
-          repository: {
-            name: base64PR.base.repo.name,
-            nameWithOwner: base64PR.base.repo.full_name,
-            url: base64PR.base.repo.html_url,
-            description: base64PR.base.repo.description
-          },
-          mergedAt: base64PR.merged_at || base64PR.closed_at, // Use closed_at as fallback
-          additions: base64PR.additions,
-          deletions: base64PR.deletions
-        };
-
-        // Combine both PRs
-        const relevantPRs = [
-          ...skillcertSearch.nodes,
-          formattedBase64PR
-        ];
-
-        // Log for debugging
-        console.log('Search results:', {
-          skillcert: skillcertSearch.nodes,
-          base64: formattedBase64PR
-        });
-
-        // Log everything for debugging
-        console.log('Combined PRs:', relevantPRs);
-
-        setContributions(relevantPRs);
+        const response = await fetch('/api/github/contributions');
+        if (!response.ok) {
+          throw new Error('Failed to fetch contributions');
+        }
+        const data = await response.json();
+        setContributions(data);
         setLoading(false);
       } catch (err) {
         console.error('Error fetching contributions:', err);
