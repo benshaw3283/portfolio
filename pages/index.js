@@ -15,6 +15,7 @@ import Resume from "../components/Resume";
 import Minutia from "../components/Minutia";
 import Theme from '../components/Theme'
 import { useStore } from '../components/Theme'
+import Contributions from "@/components/Contributions";
 
 export default function Home() {
   const { theme } = useStore()
@@ -229,10 +230,11 @@ export default function Home() {
               <br></br>
               <br></br>
             </div>
-            <div ref={minutiaRef} className="order-6">
-            <motion.section animate={minutiaInView ? "in" : "out"} variants={variants} transition={{ duration: 0.4 }}><Minutia /></motion.section>
+            <div className="order-7">
+              <Contributions />
             </div>
-            <div ref={ref} className="order-7 justify-center flex w-full ">
+            
+            <div ref={ref} className="order-8 justify-center flex w-full ">
               <motion.section
                 animate={inView ? "in" : "out"}
                 variants={variants}
@@ -356,6 +358,9 @@ export default function Home() {
                   </ul>
                 </div>
               </motion.section>
+            </div>
+            <div ref={minutiaRef} className="order-9">
+            <motion.section animate={minutiaInView ? "in" : "out"} variants={variants} transition={{ duration: 0.4 }}><Minutia /></motion.section>
             </div>
           </div>
         </div>
