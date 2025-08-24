@@ -51,7 +51,7 @@ const Resume = () => {
         </Tooltip.Portal>
       <DialogContent className="max-w-[95vw] max-h-[95vh] w-[800px] md:h-[900px] lg:h-[900px] h-[520px] bg-none backdrop-blur-xl rounded-lg ">
         <a
-          className=" w-8 h-fit text-black absolute inset-2 "
+          className=" w-8 h-fit text-black opacity-80 hover:opacity-100 absolute inset-2 "
           href="/resume.png"
           download="/resume.png"
         >
