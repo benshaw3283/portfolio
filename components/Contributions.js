@@ -35,7 +35,7 @@ const Contributions = () => {
   return (
     <div className="w-full max-w-fit mx-auto py-4">
       <h2
-        className={`text-2xl p-4 w-fit mx-auto mb-4 text-white font-Chillax font-bold bg-black tracking-wider border-0 border-b ${
+        className={`text-2xl p-4 w-[90%] mx-auto mb-4 text-white text-center font-Chillax font-bold bg-black tracking-wider border-0 border-b ${
           theme === "red-500"
             ? "animate-[border-pulse-red_4s_ease-in-out_infinite]"
             : theme === "blue-500"

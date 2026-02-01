@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/next";
+import Sidebar from "@/components/Sidebar";
 
 export const metadata = {
   title: "Ben Shaw - Portfolio",
@@ -9,8 +10,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Analytics />
-      <body>{children}</body>
+      <body>
+        <Analytics />
+        <Sidebar />
+        {children}
+      </body>
     </html>
   );
 }

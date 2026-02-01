@@ -9,7 +9,7 @@ export const useStore = create((set) => ({
   updateTheme: (newTheme) => set({ theme: newTheme }),
 }))
 
-const Theme = () => {
+const Theme = ({ open = false }) => {
   const { theme, updateTheme } = useStore()
   const [isOpen, setIsOpen] = useState(false)
 
@@ -40,11 +40,10 @@ const Theme = () => {
   }
 
   return (
-    <div className='fixed bottom-2 lg:top-2 md:top-2 left-2 z-50'>
+    <div className='flex pl-1 z-50'>
         <motion.div 
           initial="initial"
-          animate={isOpen ? "animate" : "initial"}
-          whileHover="animate"
+          animate={(isOpen || open) ? "animate" : "initial"}
           variants={containerVariants}
           onClick={() => setIsOpen(!isOpen)}
           className='bg-slate-400  rounded-full backdrop-blur-sm opacity-80 hover:opacity-100 active:opacity-100 cursor-pointer select-none'
