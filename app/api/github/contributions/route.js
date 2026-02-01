@@ -3,6 +3,14 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
+    if (!process.env.GITHUB_ACCESS_TOKEN) {
+      console.error("GITHUB_ACCESS_TOKEN is not set");
+      return NextResponse.json(
+        { error: "GitHub token not configured" },
+        { status: 500 }
+      );
+    }
+
     const graphqlWithAuth = graphql.defaults({
       headers: {
         authorization: `Bearer ${process.env.GITHUB_ACCESS_TOKEN}`,
@@ -43,6 +51,11 @@ export async function GET() {
         },
       }
     );
+
+    if (!base64Response.ok) {
+      console.error("Base64-Pro fetch failed:", base64Response.status, base64Response.statusText);
+      throw new Error(`GitHub API returned ${base64Response.status}`);
+    }
 
     const base64PR = await base64Response.json();
 
