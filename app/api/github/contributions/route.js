@@ -41,7 +41,7 @@ export async function GET() {
       }
     `);
 
-    // Get Base64-Pro PR via REST API
+ /*   // Get Base64-Pro PR via REST API
     const base64Response = await fetch(
       "https://api.github.com/repos/codinasion/Base64-Pro/pulls/2",
       {
@@ -73,9 +73,9 @@ export async function GET() {
       additions: base64PR.additions,
       deletions: base64PR.deletions,
     };
-
+*/
     // Combine both PRs
-    const relevantPRs = [...skillcertSearch.nodes, formattedBase64PR];
+    const relevantPRs = [...skillcertSearch.nodes];
 
     return NextResponse.json(relevantPRs);
   } catch (error) {
