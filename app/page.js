@@ -93,36 +93,8 @@ export default function Home() {
 
           <div className="flex flex-col ">
             <div className="order-1 flex justify-center items-baseline mt-20 flex-row font-Chillax">
-              <h1
-                className="text-white z-10 font-Chillax text-7xl lg:text-9xl flex items-baseline"
-                aria-label="Ben Shaw"
-              >
-                <span aria-hidden="true">B</span>
-                <span className="sr-only">Ben Shaw</span>
-                <motion.span
-                  initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
-                  animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  className="text-white z-10 text-7xl lg:text-9xl"
-                  aria-hidden="true"
-                >
-                  en
-                </motion.span>
-                <span
-                  className="text-white flex text-7xl z-10 pl-4 lg:text-9xl"
-                  aria-hidden="true"
-                >
-                  S
-                </span>
-                <motion.span
-                  initial={{ clipPath: "inset(0 100% 0 0)", opacity: 0 }}
-                  animate={{ clipPath: "inset(0 0 0 0)", opacity: 1 }}
-                  transition={{ duration: 1 }}
-                  className="text-white z-10 text-7xl lg:text-9xl"
-                  aria-hidden="true"
-                >
-                  haw
-                </motion.span>
+              <h1 className="text-white z-10 font-Chillax text-7xl lg:text-9xl flex items-baseline">
+                Ben Shaw
               </h1>
             </div>
 

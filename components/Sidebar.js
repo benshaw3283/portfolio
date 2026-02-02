@@ -47,7 +47,7 @@ const Sidebar = () => {
   };
 
   return (
-	<div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=> setOpen(!open)}  className={`lg:scale-150 lg:origin-top-left lg:top-10 lg:left-6  fixed flex left-2 bottom-2 lg:bottom-auto z-50 transition-all duration-280  ${open ? "w-[230px]" : "w-[38px]"}   ${isScrolling ? "h-[32px]" : "h-32"} lg:h-32 max-h-32 rounded-lg p-1 backdrop-blur-lg border border-${theme === "red-500" ? "red-500" : theme === "blue-500" ? "blue-500" : theme === "green-500" ? "green-500" : theme === "yellow-500" ? "yellow-500" : "purple-500"} `}>
+	<div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave} onClick={()=> setOpen(!open)}  className={`lg:scale-150 lg:origin-top-left lg:top-10 lg:left-6  fixed flex left-2 bottom-3 lg:bottom-auto z-50 transition-all duration-280  ${open ? "w-[230px]" : "w-[38px]"}   ${isScrolling ? "h-[32px]" : "h-32"} lg:h-32 max-h-32 rounded-lg p-1 backdrop-blur-lg border border-${theme === "red-500" ? "red-500" : theme === "blue-500" ? "blue-500" : theme === "green-500" ? "green-500" : theme === "yellow-500" ? "yellow-500" : "purple-500"} `}>
 		<div className={ `flex flex-col justify-between ${!open ? 'lg:pointer-events-auto pointer-events-none' : 'pointer-events-auto'} items-start h-full overflow-hidden`}>
 			<Theme open={open} />
 			<div className={`pl-[2px] flex flex-row items-center ${isScrolling ? 'hidden' : 'visible'}`}>
